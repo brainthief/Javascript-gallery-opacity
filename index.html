@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Paveikslėlių galerija</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="gallery">
+		<div class="photos">
+			<img src="img/agriculture-cornfield-field-7601.jpg" class="showed">
+			<img src="img/agriculture-countryside-field-7976.jpg">
+			<img src="img/autumn-dawn-daylight-401080.jpg">
+			<img src="img/backlit-dawn-daylight-257092.jpg">
+			<img src="img/backlit-dawn-dusk-219890.jpg">
+			<img src="img/city-clouds-hills-94649.jpg">
+			<img src="img/environment-forest-green-141233.jpg">
+			<img src="img/firs-fog-forest-6858.jpg">
+			<img src="img/forest-sun-sunlight-9020.jpg">
+		</div>
+		<div class="buttons">
+			<input type="button" value="Atgal" class="prev">
+			<input type="button" value="Pirmyn" class="next">
+		</div>
+	</div>
+	<script>
+		var btn_prev = document.querySelector('#gallery .buttons .prev');
+		var btn_next = document.querySelector('#gallery .buttons .next');
+		
+		var images = document.querySelectorAll('#gallery .photos img');
+		var i=0;
+		
+		btn_prev.onclick = function(){
+			images[i].className = '';
+			i--;
+			if(i < 0){
+				i = images.length - 1;
+			}
+			images[i].className = 'showed';
+		}
+		
+		btn_next.onclick = function(){
+			images[i].className = '';
+			i++;
+			if(i >= images.length){
+				i = 0;
+			}
+			images[i].className = 'showed';
+		}
+	</script>
+</body>
+
+</html>
